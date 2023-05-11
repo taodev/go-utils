@@ -6,7 +6,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// LoadYAML 加载yaml文件
+// LoadYAML 加载并解析yaml文件
 func LoadYAML(filename string, v interface{}) error {
 	bs, err := os.ReadFile(filename)
 	if err != nil {
@@ -17,7 +17,7 @@ func LoadYAML(filename string, v interface{}) error {
 	return err
 }
 
-// SaveYAML 保存yaml文件
+// SaveYAML 编码并保存yaml文件
 func SaveYAML(filename string, v interface{}) error {
 	data, err := yaml.Marshal(v)
 	if err != nil {

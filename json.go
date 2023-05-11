@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-// LoadJSON 加载json文件
+// LoadJSON 加载并解析json文件
 func LoadJSON(filename string, v interface{}) error {
 	bs, err := os.ReadFile(filename)
 	if err != nil {
@@ -16,7 +16,7 @@ func LoadJSON(filename string, v interface{}) error {
 	return err
 }
 
-// SaveJSON 保存json文件
+// SaveJSON 编码并保存json文件
 func SaveJSON(filename string, v interface{}) error {
 	data, err := json.Marshal(v)
 	if err != nil {
